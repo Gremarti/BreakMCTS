@@ -176,15 +176,6 @@ public class Board {
 					blackHasWon = move.end.x == SIZEX-1 || whites.size() == 0;
 					break;
 			}
-		} else {
-//			for(Move moveP : getPossibleMoves(move.start)){
-//				System.err.println(moveP);
-//			}
-//			System.err.println("--");
-//			System.err.println(tiles[move.end.x][move.end.y]);
-//			System.err.println("--");
-//			System.err.println(move);
-//			throw new RuntimeException();
 		}
 	}
 
@@ -229,7 +220,7 @@ public class Board {
 	}
 
 	public boolean isFinished(){
-		return whiteHasWon || blackHasWon || blacks.size()==0 || whites.size()==0;
+		return whiteHasWon || blackHasWon;
 	}
 
 	//********** Standard Methods **********//
