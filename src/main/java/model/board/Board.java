@@ -39,8 +39,6 @@ public class Board {
 
 		whiteHasWon = board.whiteHasWon;
 		blackHasWon = board.blackHasWon;
-
-//		initializeBoard();
 	}
 
 	public Board(@NotNull Board board, @NotNull Move move){
@@ -166,7 +164,7 @@ public class Board {
 
 					tiles[move.start.x][move.start.y] = Tile.EMPTY;
 					tiles[move.end.x][move.end.y] = Tile.WHITE;
-					whiteHasWon = move.end.x == 0;
+					whiteHasWon = move.end.x == 0 || blacks.size() == 0;
 					break;
 				case BLACK:
 					blacks.remove(move.start);
@@ -175,7 +173,7 @@ public class Board {
 
 					tiles[move.start.x][move.start.y] = Tile.EMPTY;
 					tiles[move.end.x][move.end.y] = Tile.BLACK;
-					blackHasWon = move.end.x == SIZEX-1;
+					blackHasWon = move.end.x == SIZEX-1 || whites.size() == 0;
 					break;
 			}
 		} else {
@@ -231,7 +229,7 @@ public class Board {
 	}
 
 	public boolean isFinished(){
-		return whiteHasWon || blackHasWon;
+		return whiteHasWon || blackHasWon || blacks.size()==0 || whites.size()==0;
 	}
 
 	//********** Standard Methods **********//
