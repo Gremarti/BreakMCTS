@@ -19,7 +19,7 @@ public class MainTest {
 
 			System.err.println("-----------------");
 			System.err.println("Move: "+ aiMove);
-			System.err.println("Node Visited: "+ MCTS.nbNodeVisited);
+			System.err.println("Node Visited: ");
 			System.err.println("-----------------");
 			System.err.println(board);
 
